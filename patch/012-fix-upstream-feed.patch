@@ -1,13 +1,17 @@
-diff --git a/include/version.mk b/include/version.mk
-index 8a6ab94..2132a96 100644
---- a/include/version.mk
-+++ b/include/version.mk
-@@ -40,7 +40,7 @@ VERSION_NICK:=$(call qstrip_escape,$(CONFIG_VERSION_NICK))
- VERSION_NICK:=$(if $(VERSION_NICK),$(VERSION_NICK),$(RELEASE))
+diff --git a/include/kernel-version.mk b/include/kernel-version.mk
+index 150fd3f..d59a334 100644
+--- a/include/kernel-version.mk
++++ b/include/kernel-version.mk
+@@ -3,10 +3,10 @@
+ LINUX_RELEASE?=1
  
- VERSION_REPO:=$(call qstrip_escape,$(CONFIG_VERSION_REPO))
--VERSION_REPO:=$(if $(VERSION_REPO),$(VERSION_REPO),http://downloads.lede-project.org/releases/17.01-SNAPSHOT)
-+VERSION_REPO:=$(if $(VERSION_REPO),$(VERSION_REPO),http://downloads.lede-project.org/releases/17.01.2)
+ LINUX_VERSION-3.18 = .43
+-LINUX_VERSION-4.4 = .86
++LINUX_VERSION-4.4 = .86
  
- VERSION_DIST:=$(call qstrip_escape,$(CONFIG_VERSION_DIST))
- VERSION_DIST:=$(if $(VERSION_DIST),$(VERSION_DIST),LEDE)
+ LINUX_KERNEL_HASH-3.18.43 = 1236e8123a6ce537d5029232560966feed054ae31776fe8481dd7d18cdd5492c
+-LINUX_KERNEL_HASH-4.4.86 = cb7787b9cc77cd3f0c6e5a9d6aabec989a932f8145251431cf186f6ad850e2a8
++LINUX_KERNEL_HASH-4.4.86 = cb7787b9cc77cd3f0c6e5a9d6aabec989a932f8145251431cf186f6ad850e2a8
+ 
+ ifdef KERNEL_PATCHVER
+ LINUX_VERSION:=$(KERNEL_PATCHVER)$(strip $(LINUX_VERSION-$(KERNEL_PATCHVER)))
